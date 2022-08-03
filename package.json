@@ -20,6 +20,9 @@
     "type": "git",
     "url": "https://github.com/nft-stack/common-server"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "common",
     "modules",
