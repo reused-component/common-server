@@ -1,0 +1,61 @@
+{
+  "name": "common-server",
+  "version": "1.0.0",
+  "description": "Set of common functionality accross NFT projects servers.",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "docs": "jsdoc -c conf.json -r src/**/*",
+    "lint": "tslint -p src/tsconfig.json",
+    "lint:fix": "tslint -p src/tsconfig.json --fix",
+    "init": "mkdir -p dist",
+    "clean": "(rm -rf dist || true)",
+    "prebuild": "npm run clean && npm run init",
+    "build": "tsc -p src/tsconfig.json",
+    "pretest": "npm run build",
+    "test": "npm run build && tsc -p specs/tsconfig.json && mocha specs/**/*.spec.js",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nft-stack/common-server"
+  },
+  "keywords": [
+    "common",
+    "modules",
+    "server"
+  ],
+  "author": "Phong Do",
+  "license": "MIT",
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": false
+  },
+  "dependencies": {
+    "@types/express": "^4.17.11",
+    "@types/inquirer": "^6.5.0",
+    "@types/pg": "^8.6.1",
+    "commander": "^7.1.0",
+    "inquirer": "^7.0.0",
+    "pg": "^8.7.1",
+    "rollbar": "^2.14.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^14.14.28",
+    "chai": "^4.2.0",
+    "dcl-tslint-config-standard": "^2.0.0",
+    "husky": "^3.0.9",
+    "jsdoc": "^3.6.11",
+    "mocha": "^7.1.2",
+    "prettier": "^1.19.1",
+    "semantic-release": "^17.3.9",
+    "tslint": "^5.20.1",
+    "tslint-language-service": "^0.9.9",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.9.2",
+    "validate-commit-msg": "^2.14.0"
+  }
+}

@@ -1,0 +1,4 @@
+.circleci
+.vscode
+.env
+test
